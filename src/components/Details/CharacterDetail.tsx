@@ -9,6 +9,19 @@ interface CharacterDetailProps {
 const CharacterDetail: React.FC<CharacterDetailProps> = (props) => {
   const { character } = props;
 
+  if (
+    !character.status ||
+    !character.species ||
+    !character.episode ||
+    !character.location
+  ) {
+    return (
+      <View>
+        <Text>Detalhes do personagem não disponíveis.</Text>
+      </View>
+    );
+  }
+
   return (
     <View>
       <Image
@@ -18,6 +31,8 @@ const CharacterDetail: React.FC<CharacterDetailProps> = (props) => {
       <Text>Name: {character.name}</Text>
       <Text>Status: {character.status}</Text>
       <Text>Species: {character.species}</Text>
+      <Text>Episode: {character.episode}</Text>
+      <Text>Location: {character.location}</Text>
     </View>
   );
 };

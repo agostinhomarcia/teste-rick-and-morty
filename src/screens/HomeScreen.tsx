@@ -8,7 +8,7 @@ import { Container, SearchInput, SearchButton, LoadingText } from "./styles";
 import { useModal } from "../utils/modalUtils";
 
 const HomeScreen: React.FC = () => {
-  const [characterName, setCharacterName] = useState("Morty");
+  const [characterName, setCharacterName] = useState("");
   const { loading, data, refetch } = useQuery(GET_CHARACTERS, {
     variables: { page: 2, name: characterName },
   });
@@ -17,6 +17,10 @@ const HomeScreen: React.FC = () => {
   );
 
   const { isOpen, openModal, closeModal } = useModal();
+
+  console.log("Loading:", loading);
+
+  console.log("Data:", data);
 
   const openModalWithCharacter = (character: Character) => {
     setSelectedCharacter(character);
@@ -37,12 +41,14 @@ const HomeScreen: React.FC = () => {
         <FlatList
           data={data.characters.results}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <CharacterListItem
-              character={item}
-              onPress={() => openModalWithCharacter(item)}
-            />
-          )}
+          renderItem={({ item }) => {
+            return (
+              <CharacterListItem
+                character={item}
+                onPress={() => openModalWithCharacter(item)}
+              />
+            );
+          }}
         />
       )}
 

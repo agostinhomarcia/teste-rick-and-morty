@@ -1,4 +1,3 @@
-// src/api.ts
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { Character, CharacterDetails } from "../types/types";
 
