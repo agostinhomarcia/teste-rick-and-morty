@@ -39,6 +39,7 @@ const HomeScreen: React.FC = () => {
         <LoadingText>Loading...</LoadingText>
       ) : (
         <FlatList
+          showsHorizontalScrollIndicator={false}
           data={data.characters.results}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => {
