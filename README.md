@@ -1,25 +1,25 @@
 <p align="center">
-   <img src="https://media.giphy.com/media/lLlG6lAGL36SdhTqcE/giphy.gif" alt="teste-morty" width="280"/>
+   <img src="https://media.giphy.com/media/UrVAFmJlxdRbHt2lX5/giphy.gif" alt="morty" width="280"/>
 </p>
 
 <p align="right">
-   <img src="https://media.giphy.com/media/V6VN30xiApzSa8Slt2/giphy.gif" alt="teste-morty" width="130"/>
+   <img src="https://media.giphy.com/media/JsEDe5fTepBIDnaZKT/giphy.gif" alt="morty" width="130"/>
 </p>
 
 <h1 align="center"></h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/agostinhomarcia/teste-morty?color=eb4034">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/agostinhomarcia/teste-rick-and-morty?color=eb4034">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/agostinhomarcia/teste-morty?color=eb4034">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/agostinhomarcia/teste-rick-and-morty?color=eb4034">
 
-  <img alt="License" src="https://img.shields.io/github/license/agostinhomarcia/teste-morty?color=eb4034">
+  <img alt="License" src="https://img.shields.io/github/license/agostinhomarcia/teste-rick-and-morty?color=eb4034">
 
-   <img alt="Github issues" src="https://img.shields.io/github/issues/agostinhomarcia/teste-morty?color=eb4034" />
+   <img alt="Github issues" src="https://img.shields.io/github/issues/agostinhomarcia/teste-rick-and-morty?color=eb4034" />
 
-   <img alt="Github forks" src="https://img.shields.io/github/forks/agostinhomarcia/teste-morty?color=eb4034" />
+   <img alt="Github forks" src="https://img.shields.io/github/forks/agostinhomarcia/teste-rick-and-morty?color=eb4034" />
 
-   <img alt="Github stars" src="https://img.shields.io/github/stars/agostinhomarcia/teste-morty?color=eb4034" /> 
+   <img alt="Github stars" src="https://img.shields.io/github/stars/agostinhomarcia/teste-rick-and-morty?color=eb4034" /> 
 </p>
 
 <p align="center">
@@ -37,7 +37,7 @@
 
 ## :dart: About
 
-<h4 align="center"> Cronometro </h4>
+<h4 align="center"> Rick and Morty </h4>
 
 <p align="center">
   <img src="./src/crono.gif" alt="teste-morty" />
@@ -88,6 +88,7 @@ The following tools were used in this project:
 - [React.js](https://legacy.reactjs.org/)
 - [TypeScript](https://reactnative.dev/docs/0.70/typescript)
 - [Styled-components](https://styled-components.com/)
+- [Apolo-Graphql](https://www.apollographql.com/docs/react/)
 
 ## :white_check_mark: Requirements
 
@@ -97,9 +98,9 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/agostinhomarcia/teste-morty.git
+$ git clone https://github.com/agostinhomarcia/teste-rick-and-morty.git
 # Access
-$ cd teste-morty
+$ cd teste-rick-and-morty
 # Install dependencies
 $ expo install
 # Run the project
@@ -114,7 +115,7 @@ This project is under the [MIT license](./License).
 Made with love by [Márcia Agostinho](https://github.com/agostinhomarcia) 🚀.
 
 <p align="center">
-   <img src="https://media.giphy.com/media/chKfsQfFEgDSUWgKfD/giphy.gif" alt="morty" width="450"/>
+   <img src="https://media.giphy.com/media/1nbx4blBxXXgw903yN/giphy.gif" alt="morty" width="350"/>
 </p>
 
 &#xa0;
