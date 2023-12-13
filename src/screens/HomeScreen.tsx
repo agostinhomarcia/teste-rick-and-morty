@@ -30,7 +30,6 @@ const HomeScreen: React.FC = () => {
         value={characterName}
         onChangeText={(text: any) => setCharacterName(text)}
       />
-      <SearchButton title="Pesquisar" onPress={() => refetch()} />
 
       {loading ? (
         <LoadingText>Loading...</LoadingText>
@@ -53,12 +52,9 @@ const HomeScreen: React.FC = () => {
             <View>
               <Image
                 source={{ uri: selectedCharacter.image }}
-                style={{ width: 100, height: 100 }}
+                style={{ width: 150, height: 150 }}
               />
               <Text>Name: {selectedCharacter.name}</Text>
-              <Text>
-                Number of Episodes: {selectedCharacter.episode.length}
-              </Text>
             </View>
           )}
           <Button title="Fechar" onPress={closeModal} />

@@ -1,6 +1,4 @@
-// src/types.ts
 export interface Character {
-  episode: any;
   id: string;
   name: string;
   image: string;
@@ -12,4 +10,6 @@ export interface CharacterDetails {
   image: string;
   status: string;
   species: string;
+  episode: string;
+  location: string;
 }

@@ -1,4 +1,3 @@
-// src/components/CharacterListItem.tsx
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { Container, CharacterImage, CharacterName } from "./styles";
