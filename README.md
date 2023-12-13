@@ -40,7 +40,7 @@
 <h4 align="center"> Rick and Morty </h4>
 
 <p align="center">
-  <img src="./src/crono.gif" alt="teste-morty" />
+  <img src="assets/rick-and-morty.gif" alt="teste-morty" />
   
 </p>
 
