@@ -40,7 +40,7 @@
 <h4 align="center"> Rick and Morty </h4>
 
 <p align="center">
-  <img src="assets/rick-and-morty.gif" alt="teste-morty" />
+  <img src="assets/morty.gif" alt="teste-morty" />
   
 </p>
 
@@ -48,7 +48,7 @@
 
 #### Aplicativo Rick and Morty
 
-Bem-vindo ao nosso app! Aqui, você pode explorar informações sobre os personagens da série Rick and Morty.
+Bem-vindo! Aqui, você pode explorar informações sobre os personagens da série Rick and Morty.
 
 #### Sobre o App
 

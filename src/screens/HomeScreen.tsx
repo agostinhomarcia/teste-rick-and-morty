@@ -80,6 +80,8 @@ const HomeScreen: React.FC = () => {
         <LoadingText>Loading...</LoadingText>
       ) : (
         <FlatList
+          numColumns={2} // Definir o número de colunas como 2
+          columnWrapperStyle={{ justifyContent: "space-around" }}
           showsVerticalScrollIndicator={false}
           data={data?.characters.results || []}
           keyExtractor={(item) => item.id.toString()}
@@ -116,9 +118,7 @@ const HomeScreen: React.FC = () => {
                   <CharacterDetailsText>
                     ✅ Species: {characterDetails?.character.species}
                   </CharacterDetailsText>
-                  <CharacterDetailsText>
-                    📺 Episodes: {characterDetails?.character.episodes?.name}
-                  </CharacterDetailsText>
+
                   <CharacterDetailsText>
                     🌍 Location: {characterDetails?.character.location?.name}
                   </CharacterDetailsText>

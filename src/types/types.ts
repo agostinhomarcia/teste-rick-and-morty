@@ -5,14 +5,6 @@ export interface Character {
 
   status: string;
   species: string;
-  episode: string;
-  location: string;
-}
-
-export interface CharacterDetails {
-  character?: Character;
-  status: string;
-  species: string;
-  episode: string;
+  episodes: string;
   location: string;
 }
