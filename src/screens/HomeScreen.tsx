@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import { View, FlatList, Modal, Button, Text, Image } from "react-native";
 import { gql, useQuery } from "@apollo/client";
 import CharacterListItem from "../components/List/CharacterListItem";
-import { Container, SearchInput, LoadingText } from "./styles";
+import {
+  Container,
+  SearchInput,
+  LoadingText,
+  ModalContainer,
+  ModalContent,
+  CharacterImage,
+  CharacterDetailsText,
+  CloseButton,
+} from "./styles";
 import { useModal } from "../utils/modalUtils";
 import { Character } from "../types/types";
 
@@ -19,8 +28,8 @@ const HomeScreen: React.FC = () => {
   };
 
   const GET_CHARACTERS = gql`
-    query GetCharacters {
-      characters(page: 2, filter: { name: "Morty" }) {
+    query GetCharacters($name: String) {
+      characters(page: 2, filter: { name: $name }) {
         info {
           count
         }
@@ -32,7 +41,6 @@ const HomeScreen: React.FC = () => {
       }
     }
   `;
-
   const GET_CHARACTER_DETAILS = gql`
     query GetCharacterDetails($id: ID!) {
       character(id: $id) {
@@ -48,7 +56,9 @@ const HomeScreen: React.FC = () => {
     }
   `;
 
-  const { loading, data } = useQuery(GET_CHARACTERS);
+  const { loading, data } = useQuery(GET_CHARACTERS, {
+    variables: { name: characterName },
+  });
 
   const { loading: detailsLoading, data: characterDetails } = useQuery(
     GET_CHARACTER_DETAILS,
@@ -70,7 +80,7 @@ const HomeScreen: React.FC = () => {
         <LoadingText>Loading...</LoadingText>
       ) : (
         <FlatList
-          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
           data={data?.characters.results || []}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => {
@@ -84,32 +94,41 @@ const HomeScreen: React.FC = () => {
         />
       )}
 
-      <Modal visible={isOpen} animationType="slide">
-        <View>
+      <ModalContainer visible={isOpen} animationType="slide">
+        <ModalContent>
           {selectedCharacter && (
             <View>
-              <Image
+              <CharacterImage
                 source={{ uri: selectedCharacter.image }}
                 style={{ width: 150, height: 150 }}
               />
-              <Text>Name: {selectedCharacter.name}</Text>
+              <CharacterDetailsText>
+                👤 Name: {selectedCharacter.name}
+              </CharacterDetailsText>
 
               {detailsLoading ? (
                 <LoadingText>Loading character details...</LoadingText>
               ) : (
                 <>
-                  <Text>Status: {characterDetails?.character.status}</Text>
-                  <Text>Species: {characterDetails?.character.species}</Text>
-                  <Text>
-                    Location: {characterDetails?.character.location?.name}
-                  </Text>
+                  <CharacterDetailsText>
+                    ✨Status: {characterDetails?.character.status}
+                  </CharacterDetailsText>
+                  <CharacterDetailsText>
+                    ✅ Species: {characterDetails?.character.species}
+                  </CharacterDetailsText>
+                  <CharacterDetailsText>
+                    📺 Episodes: {characterDetails?.character.episodes?.name}
+                  </CharacterDetailsText>
+                  <CharacterDetailsText>
+                    🌍 Location: {characterDetails?.character.location?.name}
+                  </CharacterDetailsText>
                 </>
               )}
+              <CloseButton title="Fechar" onPress={closeModal} />
             </View>
           )}
-          <Button title="Fechar" onPress={closeModal} />
-        </View>
-      </Modal>
+        </ModalContent>
+      </ModalContainer>
     </Container>
   );
 };
