@@ -1,5 +1,7 @@
+// CharacterDetail.tsx
+
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text } from "react-native";
 import { CharacterDetails } from "../../types/types";
 import { StyledImage, StyledText, StyledView } from "./styles";
 import { useQuery } from "@apollo/client";
@@ -7,11 +9,11 @@ import { GET_CHARACTER_DETAILS } from "../../graphql/graphql";
 
 interface CharacterDetailProps {
   character: CharacterDetails;
+  id: string;
 }
 
 const CharacterDetail: React.FC<CharacterDetailProps> = (props) => {
-  const { character } = props;
-  const { id } = useParams();
+  const { character, id } = props;
   const { loading, error, data } = useQuery(GET_CHARACTER_DETAILS, {
     variables: { id: id },
   });
@@ -33,6 +35,7 @@ const CharacterDetail: React.FC<CharacterDetailProps> = (props) => {
   }
 
   const characterData = data.character;
+  console.log(data);
 
   return (
     <StyledView>
@@ -43,13 +46,8 @@ const CharacterDetail: React.FC<CharacterDetailProps> = (props) => {
       <StyledText>Name: {characterData.name}</StyledText>
       <StyledText>Status: {characterData.status}</StyledText>
       <StyledText>Species: {characterData.species}</StyledText>
-      <StyledText>Episode: {characterData.episode}</StyledText>
-      <StyledText>Location: {characterData.location}</StyledText>
     </StyledView>
   );
 };
 
 export default CharacterDetail;
-function useParams(): { id: any } {
-  throw new Error("Function not implemented.");
-}

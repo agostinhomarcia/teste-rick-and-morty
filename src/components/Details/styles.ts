@@ -1,6 +1,10 @@
 import styled from "styled-components/native";
 
 export const StyledView = styled.View`
+  flex: 1;
+  background-color: #ddd;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   margin-top: 55px;
 `;
