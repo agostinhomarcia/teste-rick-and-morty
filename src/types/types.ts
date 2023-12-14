@@ -10,9 +10,7 @@ export interface Character {
 }
 
 export interface CharacterDetails {
-  id: string;
-  name: string;
-  image: string;
+  character?: Character;
   status: string;
   species: string;
   episode: string;

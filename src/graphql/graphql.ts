@@ -3,27 +3,21 @@ import { gql } from "@apollo/client";
 import { Character, CharacterDetails } from "../types/types";
 
 export const GET_CHARACTERS = gql`
-  query GetCharacters($page: Int, $name: String) {
-    characters(page: $page, filter: { name: $name }) {
+  query GetCharacters {
+    characters(page: 2, filter: { name: "Morty" }) {
       info {
         count
       }
       results {
         name
-        image
       }
     }
-  }
-`;
-
-export const GET_CHARACTER_DETAILS = gql`
-  query GetCharacterDetails($id: ID!) {
-    character(id: $id) {
-      name
-      status
-      species
+    location(id: 1) {
+      id
+    }
+    episodesByIds(ids: [1, 2]) {
+      id
     }
   }
 `;
-
 export type { Character, CharacterDetails };

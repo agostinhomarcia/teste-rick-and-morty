@@ -1,36 +1,62 @@
 import React, { useState } from "react";
 import { View, FlatList, Modal, Button, Text, Image } from "react-native";
-import { useQuery } from "@apollo/client";
-import { Character, GET_CHARACTERS } from "../graphql/graphql";
+import { gql, useQuery } from "@apollo/client";
 import CharacterListItem from "../components/List/CharacterListItem";
-import { Container, SearchInput, SearchButton, LoadingText } from "./styles";
-
-import { CharacterDetails } from "../types/types";
-
+import { Container, SearchInput, LoadingText } from "./styles";
 import { useModal } from "../utils/modalUtils";
-import CharacterDetail from "../components/Details/CharacterDetail";
-
-interface CharacterDetailProps {
-  character: CharacterDetails;
-  id: string;
-}
+import { Character } from "../types/types";
 
 const HomeScreen: React.FC = () => {
   const [characterName, setCharacterName] = useState("");
-  const { loading, data, refetch } = useQuery(GET_CHARACTERS, {
-    variables: { page: 2, name: characterName },
-  });
-
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(
     null
   );
-
   const { isOpen, openModal, closeModal } = useModal();
 
-  const openModalWithCharacter = (character: Character) => {
+  const handleCharacterSelection = (character: any) => {
     setSelectedCharacter(character);
     openModal();
   };
+
+  const GET_CHARACTERS = gql`
+    query GetCharacters {
+      characters(page: 2, filter: { name: "Morty" }) {
+        info {
+          count
+        }
+        results {
+          id
+          name
+          image
+        }
+      }
+    }
+  `;
+
+  const GET_CHARACTER_DETAILS = gql`
+    query GetCharacterDetails($id: ID!) {
+      character(id: $id) {
+        id
+        name
+        status
+        species
+        location {
+          id
+          name
+        }
+      }
+    }
+  `;
+
+  const { loading, data } = useQuery(GET_CHARACTERS);
+
+  const { loading: detailsLoading, data: characterDetails } = useQuery(
+    GET_CHARACTER_DETAILS,
+    {
+      variables: { id: selectedCharacter?.id || "" },
+      skip: !selectedCharacter,
+    }
+  );
 
   return (
     <Container>
@@ -45,13 +71,13 @@ const HomeScreen: React.FC = () => {
       ) : (
         <FlatList
           showsHorizontalScrollIndicator={false}
-          data={data.characters.results}
-          keyExtractor={(item) => item.id}
+          data={data?.characters.results || []}
+          keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => {
             return (
               <CharacterListItem
                 character={item}
-                onPress={() => openModalWithCharacter(item)}
+                onPress={() => handleCharacterSelection(item)}
               />
             );
           }}
@@ -67,10 +93,18 @@ const HomeScreen: React.FC = () => {
                 style={{ width: 150, height: 150 }}
               />
               <Text>Name: {selectedCharacter.name}</Text>
-              <CharacterDetail
-                character={selectedCharacter}
-                id={selectedCharacter.id}
-              />
+
+              {detailsLoading ? (
+                <LoadingText>Loading character details...</LoadingText>
+              ) : (
+                <>
+                  <Text>Status: {characterDetails?.character.status}</Text>
+                  <Text>Species: {characterDetails?.character.species}</Text>
+                  <Text>
+                    Location: {characterDetails?.character.location?.name}
+                  </Text>
+                </>
+              )}
             </View>
           )}
           <Button title="Fechar" onPress={closeModal} />
