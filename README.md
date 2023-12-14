@@ -46,31 +46,27 @@
 
 <p align="left">
 
-#### Aplicativo Rick and Morty
+### Rick and Morty Explorer
 
-Bem-vindo! Aqui, você pode explorar informações sobre os personagens da série Rick and Morty.
+Este é um aplicativo desenvolvido em React Native com TypeScript que permite explorar informações sobre os personagens da famosa série Rick and Morty.
 
-#### Sobre o App
+#### Funcionalidades Principais
 
-Este aplicativo foi feito para ajudar os fãs da série a descobrir detalhes sobre seus personagens favoritos. Você pode ver seus nomes, imagens e até mesmo informações como status e espécie.
+###### Exibição de Personagens:
 
-#### Como Funciona
+A página inicial apresenta uma lista completa de personagens com seus respectivos nomes e imagens, permitindo uma rápida visualização dos principais protagonistas da série.
 
-###### Explorar Personagens:
+###### Detalhes dos Personagens:
 
-Na página inicial, você encontrará uma lista de personagens. Basta tocar em um deles para saber mais.
+Ao tocar em um personagem da lista, você será direcionado para uma tela de detalhes. Lá, encontrará informações adicionais como status, espécie e outros detalhes relevantes que oferecem uma visão mais aprofundada de cada personagem.
 
-###### Detalhes do Personagem:
+###### Tecnologias e Recursos Utilizados
 
-Ao selecionar um personagem, você será levado a uma tela com detalhes adicionais, como status, espécie e mais.
+GraphQL e API do Rick and Morty: O aplicativo utiliza a API GraphQL fornecida para buscar informações sobre os personagens da série, garantindo acesso rápido e eficiente aos dados.
 
-###### Personalização:
+###### Estilização Personalizada:
 
-Estilizamos o app para tornar a experiência visual mais agradável. Usamos animações para deixar a navegação mais fluida.
-
-Criamos um novo app usando React Native e TypeScript.
-Conectamos o app à API do Rick and Morty usando GraphQL para buscar informações sobre os personagens.
-Desenvolvemos uma página inicial com uma lista de personagens e uma tela de detalhes para cada um deles.
+O aplicativo foi estilizado usando styled-components, proporcionando uma experiência visual agradável e consistente.
 
 </p>
 
