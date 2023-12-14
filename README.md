@@ -115,7 +115,7 @@ This project is under the [MIT license](./License).
 Made with love by [Márcia Agostinho](https://github.com/agostinhomarcia) 🚀.
 
 <p align="center">
-   <img src="https://media.giphy.com/media/1nbx4blBxXXgw903yN/giphy.gif" alt="morty" width="350"/>
+   <img src="https://media.giphy.com/media/1nbx4blBxXXgw903yN/giphy.gif" alt="morty" width="250"/>
 </p>
 
 &#xa0;
