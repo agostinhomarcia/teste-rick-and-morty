@@ -13,8 +13,10 @@ export const SearchInput = styled.TextInput`
   height: 40px;
   border: 1px solid #fff;
   margin-bottom: 20px;
-  padding: 5px;
-  width: 180px;
+  padding: 7px;
+  width: 200px;
+  font-size: 14px;
+  text-align: center;
 `;
 
 export const CloseButton = styled.Button`
@@ -52,4 +54,5 @@ export const CharacterDetailsText = styled.Text`
   margin-bottom: 10px;
   text-align: center;
   margin-top: 8px;
+  font-size: 16px;
 `;

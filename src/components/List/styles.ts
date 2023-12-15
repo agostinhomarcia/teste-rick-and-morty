@@ -15,4 +15,5 @@ export const CharacterName = styled.Text`
   margin-bottom: 10px;
   margin-top: 20px;
   text-align: center;
+  font-size: 16px;
 `;

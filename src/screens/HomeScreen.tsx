@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { View, FlatList } from "react-native";
 import { gql, useQuery } from "@apollo/client";
 import CharacterListItem from "../components/List/CharacterListItem";
@@ -14,7 +14,6 @@ import {
 } from "./styles";
 import { useModal } from "../utils/modalUtils";
 import { Character } from "../types/types";
-import Lottie from "lottie-react-native";
 
 const HomeScreen: React.FC = () => {
   const [characterName, setCharacterName] = useState("");
