@@ -12,7 +12,7 @@ export const Container = styled.View`
 export const SearchInput = styled.TextInput`
   height: 40px;
   border: 1px solid #fff;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding: 5px;
   width: 180px;
 `;

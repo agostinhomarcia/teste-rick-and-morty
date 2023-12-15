@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, FlatList, Modal, Button, Text, Image } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, FlatList } from "react-native";
 import { gql, useQuery } from "@apollo/client";
 import CharacterListItem from "../components/List/CharacterListItem";
 import {
@@ -14,12 +14,14 @@ import {
 } from "./styles";
 import { useModal } from "../utils/modalUtils";
 import { Character } from "../types/types";
+import Lottie from "lottie-react-native";
 
 const HomeScreen: React.FC = () => {
   const [characterName, setCharacterName] = useState("");
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(
     null
   );
+
   const { isOpen, openModal, closeModal } = useModal();
 
   const handleCharacterSelection = (character: any) => {
@@ -80,7 +82,7 @@ const HomeScreen: React.FC = () => {
         <LoadingText>Loading...</LoadingText>
       ) : (
         <FlatList
-          numColumns={2} // Definir o número de colunas como 2
+          numColumns={2}
           columnWrapperStyle={{ justifyContent: "space-around" }}
           showsVerticalScrollIndicator={false}
           data={data?.characters.results || []}

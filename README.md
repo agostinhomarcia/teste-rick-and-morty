@@ -56,6 +56,8 @@ Este é um aplicativo desenvolvido em React Native com TypeScript que permite ex
 
 A página inicial apresenta uma lista completa de personagens com seus respectivos nomes e imagens, permitindo uma rápida visualização dos principais protagonistas da série.
 
+Além da visualização da lista completa de personagens, o aplicativo oferece uma opção de busca, permitindo que os usuários encontrem rapidamente um personagem específico digitando o nome desejado em um campo de entrada. Essa funcionalidade agiliza a pesquisa e a localização de um personagem específico entre a vasta lista disponível, oferecendo uma experiência mais personalizada e direcionada.
+
 ###### Detalhes dos Personagens:
 
 Ao tocar em um personagem da lista, você será direcionado para uma tela de detalhes. Lá, encontrará informações adicionais como status, espécie e outros detalhes relevantes que oferecem uma visão mais aprofundada de cada personagem.
