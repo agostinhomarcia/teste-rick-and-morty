@@ -106,22 +106,22 @@ const HomeScreen: React.FC = () => {
                 style={{ width: 150, height: 150 }}
               />
               <CharacterDetailsText>
-                👤 Name: {selectedCharacter.name}
+                👽 Name: {selectedCharacter.name} 🚀
               </CharacterDetailsText>
 
               {detailsLoading ? (
-                <LoadingText>Loading character details...</LoadingText>
+                <LoadingText>Loading character details...⏳</LoadingText>
               ) : (
                 <>
                   <CharacterDetailsText>
-                    ✨Status: {characterDetails?.character.status}
+                    🛸 Status: {characterDetails?.character.status} ⚗️
                   </CharacterDetailsText>
                   <CharacterDetailsText>
-                    ✅ Species: {characterDetails?.character.species}
+                    🔬 Species: {characterDetails?.character.species} 🧬
                   </CharacterDetailsText>
 
                   <CharacterDetailsText>
-                    🌍 Location: {characterDetails?.character.location?.name}
+                    🔭 Location: {characterDetails?.character.location?.name} 🌌
                   </CharacterDetailsText>
                 </>
               )}
