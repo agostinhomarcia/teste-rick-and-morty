@@ -21,10 +21,7 @@ export const SearchInput = styled.TextInput`
 
 export const CloseButton = styled.Button`
   border-radius: 2px;
-`;
-
-export const LoadingText = styled.Text`
-  margin-top: 10px;
+  background-color: #00ffb3;
 `;
 
 export const ModalContainer = styled.Modal`

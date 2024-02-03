@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, ActivityIndicator } from "react-native";
 import { gql, useQuery } from "@apollo/client";
 import CharacterListItem from "../components/List/CharacterListItem";
 import {
   Container,
   SearchInput,
-  LoadingText,
   ModalContainer,
   ModalContent,
   CharacterImage,
@@ -78,7 +77,7 @@ const HomeScreen: React.FC = () => {
       />
 
       {loading ? (
-        <LoadingText>Loading...</LoadingText>
+        <ActivityIndicator size="large" color="#00ffb3" />
       ) : (
         <FlatList
           numColumns={2}
@@ -110,7 +109,7 @@ const HomeScreen: React.FC = () => {
               </CharacterDetailsText>
 
               {detailsLoading ? (
-                <LoadingText>Loading character details...⏳</LoadingText>
+                <ActivityIndicator size="large" color="#00ffb3" />
               ) : (
                 <>
                   <CharacterDetailsText>
